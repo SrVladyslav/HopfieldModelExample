@@ -3,7 +3,7 @@ import numpy as np
 
 #Hopfield network:
 #OFFLine
-#Remember that:
+#remember that:
 #W = T^t * T - I
 #Wi = W0 + W1 + ... + Wi
 #Also we need some function
@@ -17,10 +17,10 @@ def createI(x):
 
 #Defining W matrix formula
 def solveW(T):
-	#Let's create our matrices 
+	#Lets create our matrices 
 	T = np.matrix(T)
 	print(f"T=",T)
-	#T transpose Matrix
+	#T transpose matrix
 	T1 = np.matrix(T.transpose())
 	print(f"T1=", T1)
 	#Identity matrix  
@@ -48,11 +48,11 @@ def solve(E):
 	S = np.matrix(Sa)
 	#Our basic prediction
 	if (S == E0).all():
-		print("|   The solution is E0 														         |")
+		print("The solution is E0")
 	elif (S == E1).all():
-		print("|   The solution is E1 														         |")
+		print("The solution is E1")
 	else:
-		print("|   More loops needed... 														     |")
+		print("More loops needed...")
 
 
 #Test:we suppose that we have 3X3 matrix with two pictures to learn like:
@@ -85,22 +85,15 @@ print(f"W=", W)
 
 
 #6)Enjoy and play 
-print("/////////////////////////////////  LET'S PLAY!  \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\")
 print("======================================================================================")
-print("|   >>This solution must be E1                                                       |")
+print(">>This solution must be E1")
 solve(np.matrix([-1,-1,-1,-1,-1,1,1,-1,1]))
 
-print("======================================================================================")
-print("|   >>This solution must be E0                                                       |")
+print(">>This solution must be E0")
 solve(np.matrix([1,-1,1,-1,-1,-1,-1,1,-1]))
 
-print("======================================================================================")
-print("|   >>This solution must be E1                                                       |")
+print(">>This solution must be E1")
 solve(np.matrix([1,-1,-1,1,-1,1,-1,-1,1]))
 
-print("======================================================================================")
-print("|   >>This solution must be E1                                                       |")
-solve(np.matrix([-1,1,-1,-1,1,1,1,-1,-1]))
-
-print("======================================================================================")
-print("\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\//////////////////////////////////////////////")
+print(">>This solution must be E1")
+#solve(np.matrix([]))
